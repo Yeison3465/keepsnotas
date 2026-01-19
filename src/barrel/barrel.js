@@ -1,0 +1,6 @@
+export { Home } from '../pages/Home'
+export { Login } from '../pages/Login'
+export { Notes } from '../pages/Notes'
+export { Register } from '../pages/Register'
+export { ProtectedRoute } from '../routes/ProtectedRoute'
+export { PublicRoute } from '../routes/PublicRoute'
