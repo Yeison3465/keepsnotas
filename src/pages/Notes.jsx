@@ -1,10 +1,10 @@
-'use client';
 
 import React, { useEffect, useState } from 'react'
 import { Logout } from '../components/Logout'
 import { createNote, deleteNote, getNotes, getProfile, updateNote } from '../api/service/serviceCrud'
 import { Navbar } from '../components/Navbar'
 import { Content } from '../components/Content'
+import toast from 'react-hot-toast';
 
 export const Notes = () => {
 
@@ -56,11 +56,12 @@ export const Notes = () => {
             setAllnotes([...allnotes, newNote]);
             setTittle('');
             setConten('');
-            alert('Nota creada con exito');
+            toast.success('Nota creada con éxito');
             setIsActive3(false);
         }
+        
         catch (err) {
-            alert('No se pudo crear la nota');
+            toast.error('No se pudo crear la nota');
         }
 
     };
@@ -84,9 +85,9 @@ export const Notes = () => {
             setEditTitle('')
             setEditContent('')
 
-            alert('Nota actualizada con éxito')
+            toast.success('Nota actualizada con éxito');
         } catch (err) {
-            alert('No se pudo actualizar la nota')
+            toast.error('No se pudo actualizar la nota');
         }
     }
 
@@ -94,7 +95,7 @@ export const Notes = () => {
         try {
             await deleteNote(id);
             setAllnotes(allnotes.filter(note => note.id !== id));
-            alert('Nota eliminada con éxito');
+            toast.success('Nota eliminada con éxito');
         } catch (error) {
 
         }
