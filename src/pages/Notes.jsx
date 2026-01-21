@@ -205,7 +205,10 @@ export const Notes = () => {
                             </button>
                             <button
                                 type="button"
-                                onClick={() => handleDelete(deleteId)}
+                                onClick={() => {
+                                    handleDelete(deleteId);
+                                    setIsActive2(false);
+                                }}
                                 className="flex-1 py-3 bg-red-500 text-white font-medium rounded-xl hover:bg-red-600 transition-colors"
                             >
                                 Sí, Eliminar

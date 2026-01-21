@@ -27,6 +27,7 @@ export const createNote = async (title_notes, content = "") => {
     const { data, error } = await supabase
         .from('notes')
         .insert([{ title_notes, content }])
+        .select()
         .single();
     if (error) {
         console.log('Error creating note:', error);
